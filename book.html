@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="pro.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>EXPLORE</h1>
+    </div >
+        <div class="bookcontainer">
+            <div class="bookspace">
+                <h2>RICH DAD POOR DAD</h2>
+                <h5>-ALDO JASON</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus sapiente iusto est sequi
+                        rem voluptas modi vel consectetur fugit eos.</p>
+                    <button onclick="bookdelete(event)">delete</button>
+            </div>
+        </div>
+        <button class="addbook" onclick="bookadd()">+</button>
+        <div class="overlay"> </div>
+        <div class="bookaddbox">
+            <h3>ADD BOOK</h3>
+            <form>
+                <input type="text" placeholder="Book Title" id="booktitle">
+                <input type="text" placeholder="Author name" id="authorname">
+                <textarea placeholder="Short discription" id="shortnote"></textarea>
+                <button type="button" onclick="adlist(event)">ADD</button>
+                <button type="button" onclick="closeadd(event)">CANCEL</button>
+            </form>
+        </div>
+    </div>
+
+
+    
+</body>
+
+</html>
