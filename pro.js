@@ -1,38 +1,38 @@
-overlay = document.querySelector(".overlay")
-bookaddbox = document.querySelector(".bookaddbox")
 function bookadd() {
-    overlay.style.display = "block"
-    bookaddbox.style.display = "block"
-}
-function closeadd(event) {
-    event.preventDefault()
-    overlay.style.display = "none"
-    bookaddbox.style.display = "none"
+    document.querySelector('.bookaddbox').classList.add('active');
+    document.querySelector('.overlay').classList.add('active');
 }
 
-container = document.querySelector(".bookcontainer")
-booktitle = document.getElementById("booktitle")
-authorname = document.getElementById("authorname")
-shortnote = document.getElementById("shortnote")
+function closeadd(event) {
+    event.preventDefault();
+    document.querySelector('.bookaddbox').classList.remove('active');
+    document.querySelector('.overlay').classList.remove('active');
+}
 
 function adlist(event) {
-    event.preventDefault()
-    div = document.createElement("div")
-    div.setAttribute("class","bookspace")
-    div.innerHTML = `<h2>${booktitle.value}</h2>
-            <h5>-${authorname.value}</h5>
-           <p>${shortnote.value}</p>
-            <button onclick="bookdelete(event)">delete</button>`
+    event.preventDefault();
 
-    container.append(div)
-    overlay.style.display = "none"
-    bookaddbox.style.display = "none"
-    booktitle.value=""
-    authorname.value=""
-    shortnote.value=""
+    const title = document.getElementById("booktitle").value.trim();
+    const author = document.getElementById("authorname").value.trim();
+    const note = document.getElementById("shortnote").value.trim();
 
+    if (!title || !author || !note) return;
+
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("bookspace");
+    newDiv.innerHTML = `
+        <h2>${title}</h2>
+        <h5>- ${author}</h5>
+        <p>${note}</p>
+        <button onclick="bookdelete(event)">delete</button>
+    `;
+
+    document.querySelector(".bookcontainer").appendChild(newDiv);
+
+    closeadd(event);
+    document.querySelector("form").reset();
 }
-function bookdelete(event){
-    event.target.parentElement.remove()
 
+function bookdelete(event) {
+    event.target.parentElement.remove();
 }
