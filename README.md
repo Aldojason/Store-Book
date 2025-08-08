@@ -16,6 +16,6 @@ A simple and responsive web app to add, view, and manage your reading list. Buil
 
 ## 🚀 Live Demo
 
-👉 [Click here to view the live project]( https://aldojason.github.io/webbook-js/)
+👉 [Click here to view the live project]( https://aldojason.github.io/Store-Book/)
 
 
